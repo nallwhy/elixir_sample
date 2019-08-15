@@ -1,11 +1,15 @@
-# Script for populating the database. You can run it as:
-#
-#     mix run priv/repo/seeds.exs
-#
-# Inside the script, you can read and write to any of your
-# repositories directly:
-#
-#     Jspace.Repo.insert!(%Jspace.SomeSchema{})
-#
-# We recommend using the bang functions (`insert!`, `update!`
-# and so on) as they will fail if something goes wrong.
+alias Jspace.Accounts.User
+alias Jspace.Repo
+alias Jspace.Crypto
+
+password_hash = "password1!" |> Crypto.hash_password()
+
+1..10
+|> Enum.each(fn i ->
+  %User{
+    email: "test-#{i}@rinobr.com",
+    password_hash: password_hash,
+    name: "name-#{i}"
+  }
+  |> Repo.insert!()
+end)

@@ -19,8 +19,9 @@ defmodule JspaceWeb.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", JspaceWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", JspaceWeb.Api, as: :api do
+    pipe_through :api
+
+    post "/sign_up", UserController, :sign_up
+  end
 end
