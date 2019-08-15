@@ -16,6 +16,8 @@ defmodule Jspace.DataCase do
 
   using do
     quote do
+      use Jspace.CaseHelper
+
       alias Jspace.Repo
 
       import Ecto

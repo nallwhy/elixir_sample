@@ -38,7 +38,8 @@ defmodule Jspace.MixProject do
     [
       {:ecto_sql, "~> 3.0"},
       {:postgrex, ">= 0.0.0"},
-      {:jason, "~> 1.0"}
+      {:jason, "~> 1.0"},
+      {:ex_machina, "~> 2.3", only: [:test]}
     ]
   end
 

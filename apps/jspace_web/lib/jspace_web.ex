@@ -22,6 +22,7 @@ defmodule JspaceWeb do
       use Phoenix.Controller, namespace: JspaceWeb
       import Plug.Conn
       import JspaceWeb.Gettext
+      import JspaceWeb.ParseHelper
       alias JspaceWeb.Router.Helpers, as: Routes
     end
   end
